@@ -17,8 +17,8 @@ public class CustomerOrderDAOImpl implements CustomerOrderDAO {
 		CustomerOrder customerOrder=new CustomerOrder();
 		customerOrder.setCart(cart);
 		customerOrder.setCustomer(cart.getCustomer());
-		customerOrder.setBillingAddress(cart.getCustomer().getBillingAddress());
-		customerOrder.setShippingAddress(cart.getCustomer().getShippingAddress());
+//		customerOrder.setBillingAddress(cart.getCustomer().getBillingAddress());
+//		customerOrder.setShippingAddress(cart.getCustomer().getShippingAddress());
 		//Insert the data in CustomerOrder table
 		Session session=sessionFactory.openSession();
 		session.save(customerOrder);

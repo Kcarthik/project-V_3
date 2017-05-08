@@ -34,8 +34,9 @@
 					<ul class="dropdown-menu">
 					
 						<li><a href="#"></a></li>
-						<li><a href="#">Fish</a></li>
-						<li><a href="#">Dog</a></li>
+						<li><a href="#">Pre-Workout</a></li>
+						<li><a href="#">Intra-Workout</a></li>
+						<li><a href="#">Post-Workout</a></li>
 					</ul></li>
 				
 			</ul>

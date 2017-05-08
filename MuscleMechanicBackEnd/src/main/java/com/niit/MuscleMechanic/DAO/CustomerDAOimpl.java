@@ -6,13 +6,16 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.MuscleMechanic.model.Authorities;
 import com.niit.MuscleMechanic.model.Cart;
 import com.niit.MuscleMechanic.model.Customer;
 import com.niit.MuscleMechanic.model.Users;
 
-
+@Repository("custDAO")
+@Transactional
 public class CustomerDAOimpl implements CustomerDAO{
     @Autowired
     private SessionFactory sessionFactory;
@@ -28,25 +31,25 @@ public class CustomerDAOimpl implements CustomerDAO{
 			Session session = sessionFactory.openSession();
 			logger.debug("===========================================================================");
 			// child tables - Users, billingAddress,ShippingAddresss
-			customer.getUsers().setEnabled(true);
-
-			// Assignment
-			String username = customer.getUsers().getUsername();
-			String role = "ROLE_USER";
-
-			Authorities authorities = new Authorities();
-			// set the values
-			authorities.setUsername(username);
-			authorities.setRole(role);
-
-			session.save(authorities); // insert into authorites values
-										// (?,?,'Role_USER');
-
-			Cart cart = new Cart();
-			customer.setCart(cart);
-
-			cart.setCustomer(customer);// update cart set customer_id=? ,
-										// grandtotal=? where cart_id=?
+//			customer.getUsers().setEnabled(true);
+//
+//			// Assignment
+//			String username = customer.getUsers().getUsername();
+//			String role = "ROLE_USER";
+//
+//			Authorities authorities = new Authorities();
+//			// set the values
+//			authorities.setUsername(username);
+//			authorities.setRole(role);
+//
+//			session.save(authorities); // insert into authorites values
+//										// (?,?,'Role_USER');
+//
+//			Cart cart = new Cart();
+//			customer.setCart(cart);
+//
+//			cart.setCustomer(customer);// update cart set customer_id=? ,
+//										// grandtotal=? where cart_id=?
 
 			session.save(customer);
 

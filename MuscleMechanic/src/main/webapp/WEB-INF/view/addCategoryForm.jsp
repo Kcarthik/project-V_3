@@ -18,14 +18,14 @@
 
 			<form:form method="POST" action="${url}" commandName="category">
 				<div class="form-group">
-					
 					<form:hidden path="id" class="form-control" />
 				</div>
+				
 				<div class="form-group">
 					<form:label path="categoryName">Name</form:label>
-
 					<form:input path="categoryName" class="form-control" />
 				</div>
+				
 				<div class="form-group">
 					<form:label path="categoryDetails">Category Details</form:label>
 					<form:input path="categoryDetails" class="form-control" />

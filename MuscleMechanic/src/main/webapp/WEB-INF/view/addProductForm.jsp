@@ -86,7 +86,6 @@
 								<c:url value="/admin/product/editProduct/${p.id}" var="edit"></c:url>
 								<a href="${edit}"><span class="glyphicon glyphicon-pencil"></span></a></td>
 							
-						</tr>
 					</c:forEach>
 				</table>
 
