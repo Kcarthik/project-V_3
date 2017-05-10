@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.niit.MuscleMechanic.model.Product;
-@Repository("productDAO")
+@Repository("prodDao")
 @Transactional
 
 public class ProductDAOImpl implements ProductDAO{

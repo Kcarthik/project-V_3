@@ -35,29 +35,28 @@ public class ProductController {
 
 	public String showProduct(Model model) {
 		model.addAttribute("product", new Product());
-		
+		model.addAttribute("productlist",prodDao.retrieve());
 		return "addProductForm";
 
 	}
 
 	@RequestMapping("/admin/product/addProduct")
 
-	public String addProduct(@Valid @ModelAttribute(value = "product")  Product prod,BindingResult result,Model model,HttpServletRequest request) 
+	public String addProduct(@Valid @ModelAttribute(value = "product")  Product product,BindingResult result,Model model,HttpServletRequest request) 
 	{
 		
 		if (result.hasErrors()){
-		
+			model.addAttribute("productlist",prodDao.retrieve());
 			return "addProductForm";
 		}
 		
 		
-		prodDao.insert(prod);
+		prodDao.insert(product);
 		
 		
-		MultipartFile file =prod.getFile();
-//		if (!prodImage.isEmpty()) {
-//			Path paths=
-//	Paths.get("/Users/karthikcs/Desktop/MuscleMechanic/MuscleMechanic/src/main/webapp/resources/images"+ prod.getId()+".png");
+//		MultipartFile file =product.getFile();
+//	if (!prodImage.isEmpty()) {
+//			Path paths=Paths.get("/Users/karthikcs/Desktop/MuscleMechanic/MuscleMechanic/src/main/webapp/resources/images"+ product.getId()+".png");
 //		try {
 //			prodImage.transferTo(new File(paths.toString()));
 //		} catch (Exception e) {
@@ -67,24 +66,24 @@ public class ProductController {
 //		
 //		}
 		
-		if (file != null && file.getSize()>0 )
-		{
-			String originalFile=file.getOriginalFilename();
-			String filePath=request.getSession().getServletContext().getRealPath("/resources/images/productimages/");
-			System.out.println(filePath +""+originalFile);
-			String myFileName= filePath + prod.getId()+ ".jpg";
-			
-			try
-			{
-				byte imagebyte[]=prod.getFile().getBytes();
-				BufferedOutputStream fos= new BufferedOutputStream(new FileOutputStream(myFileName));
-				fos.write(imagebyte);
-				fos.close();
-			}catch(Exception e)
-			{
-				e.printStackTrace();
-			}
-		}
+//		if (file != null && file.getSize()>0 )
+//		{
+//			String originalFile=file.getOriginalFilename();
+//			String filePath=request.getSession().getServletContext().getRealPath("/resources/images/productimages/");
+//		System.out.println(filePath +""+originalFile);
+//			String myFileName= filePath + product.getId()+ ".jpg";
+//			
+//			try
+//			{
+//				byte imagebyte[]=product.getFile().getBytes();
+//				BufferedOutputStream fos= new BufferedOutputStream(new FileOutputStream(myFileName));
+//				fos.write(imagebyte);
+//				fos.close();
+//			}catch(Exception e)
+//			{
+//				e.printStackTrace();
+//			}
+//		}
 		
 		return "redirect:/admin/product/showProduct";
 	}

@@ -20,7 +20,7 @@ public class ProductTestCase {
 	
 	@Autowired
 	
-	static ProductDAO productDAO;
+	static ProductDAO prodDao;
 	
 
 	
@@ -30,7 +30,7 @@ public class ProductTestCase {
 		context = new AnnotationConfigApplicationContext();
 		context.scan("com.niit.MuscleMechanic");
 		context.refresh();
-		productDAO=(ProductDAO) context.getBean("productDAO");
+		prodDao=(ProductDAO) context.getBean("prodDao");
 		product=context.getBean(Product.class);
 		
 	}
@@ -45,7 +45,7 @@ public class ProductTestCase {
 		product.setPrice(2500);
 		product.setQuantity(3);
 		
-		boolean flag= productDAO.insert(product);
+		boolean flag= prodDao.insert(product);
 	    assertEquals("",true,flag);
 	}
 	

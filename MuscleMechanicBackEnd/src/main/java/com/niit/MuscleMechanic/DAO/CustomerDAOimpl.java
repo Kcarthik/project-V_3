@@ -31,11 +31,11 @@ public class CustomerDAOimpl implements CustomerDAO{
 			Session session = sessionFactory.openSession();
 			logger.debug("===========================================================================");
 			// child tables - Users, billingAddress,ShippingAddresss
-//			customer.getUsers().setEnabled(true);
+			customer.getUsers().setEnabled(true);
 //
 //			// Assignment
-//			String username = customer.getUsers().getUsername();
-//			String role = "ROLE_USER";
+  	   //	String username = customer.getUsers().getUsername();
+		//String role = "ROLE_USER";
 //
 //			Authorities authorities = new Authorities();
 //			// set the values
@@ -73,7 +73,7 @@ public Customer getCustomerByUsername(String Username) {
 		Query query = session.createQuery("from Users where username=?");
 		query.setString(0, Username);
 		Users users = (Users) query.uniqueResult();
-		// com.niit.model.Users
+	    //com.niit.model.Users
 		Customer customer = users.getCustomer();
 		session.close();
 		return customer;

@@ -43,7 +43,7 @@ public class CategoryController
 	{
 		List<Category> cat=categoryDAO.getAllCategories();
 		model.addAttribute("categorylist", cat);
-		return "categorylist";
+		return "categoryList";
 		
 	}
 	@RequestMapping("/admin/category/deleteCategory")

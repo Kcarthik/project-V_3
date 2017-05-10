@@ -40,15 +40,16 @@ public class Product {
 	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="cid")
 	private Category category;
-	@Transient
-    private MultipartFile file;
+
+//	@Transient
+//    private MultipartFile file;
 	
-	public MultipartFile getFile() {
-		return file;
-	}
-	public void setFile(MultipartFile file) {
-		this.file = file;
-	}
+//	public MultipartFile getFile() {
+//		return file;
+//	}
+//	public void setFile(MultipartFile file) {
+//		this.file = file;
+//	}
 	public int getId() {
 		return id;
 	}
@@ -81,8 +82,8 @@ public class Product {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	public Category getCategory() {
-		return category;
+	public Category getCategory() 
+	{		return category;
 	}
 	public void setCategory(Category category) {
 		this.category = category;

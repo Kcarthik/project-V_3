@@ -28,37 +28,39 @@
 					<div class="form-group">
 						<form:label path="name">Name</form:label>
 						<form:input path="name" class="form-control" />
-						<form:errors path="name" cssClass="error"></form:errors>
+						 <form:errors path="name" cssClass="error"></form:errors> 
 					</div>
 					<div class="form-group">
 						<form:label path="description">Description</form:label>
 						<form:input path="description" class="form-control" />
-						<form:errors path="description" cssClass="error"></form:errors>
+					 	<form:errors path="description" cssClass="error"></form:errors> 
 					</div>
 					<div class="form-group">
 						<form:label path="price">Price</form:label>
 						<form:input path="price" class="form-control" />
-						<form:errors path="price" cssClass="error"></form:errors>
+						<form:errors path="price" cssClass="error"></form:errors> 
 					</div>
 					<div class="form-group">
 						<form:label path="quantity">Quantity</form:label>
 						<form:input path="quantity" class="form-control" />
-						<form:errors path="quantity" cssClass="error"></form:errors>
+					 	<form:errors path="quantity" cssClass="error"></form:errors> 
 					</div>
 
-				<%-- <div class="form-group">
+			<%--  <div class="form-group">
 						<form:label path="file">Picture</form:label>
 						<form:input type="file" path="file" class="form-control" />
 						<form:errors path="file" cssClass="error"></form:errors>
-					</div>  --%>
+					</div>   --%>
 
 					<input type="submit" value="Add Product" />
 				</form:form>
 			</div>
-			<!-- End of col-md-5 -->
-		</div>
+			
+			</div>
+		<!-- End of col-md-5 -->
+		
 		<!-- End of row -->
-		<div class="row">
+		<%-- <div class="row">
 			<div class="col-md-6">
 
 				<table class="table">
@@ -71,9 +73,9 @@
 
 					</thead>
 					<c:forEach items="${productlist}" var="p">
-						 <%-- <tr><c:url value="${images}/${p.id}.jpg" var="src"></c:url>
+						 <tr><c:url value="${images}/${p.id}.jpg" var="src"></c:url>
 						
-							<td><img src="${src}"/></td>  --%>
+							<td><img src="${src}"/></td> 
 							
 							<td>${p.id }</td>
 							<td>${p.name }</td>
@@ -89,10 +91,11 @@
 					</c:forEach>
 				</table>
 
+
 			</div>
 
 		</div>
-
+ --%>
 
 	</div>
 	<!-- End of container-fluid -->
