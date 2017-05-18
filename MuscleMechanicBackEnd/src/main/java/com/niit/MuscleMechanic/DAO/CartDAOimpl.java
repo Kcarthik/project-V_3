@@ -5,9 +5,15 @@ import java.io.IOException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.MuscleMechanic.model.Cart;
 
+
+
+@Repository
+@Transactional
 public class CartDAOimpl implements CartDAO {
 @Autowired
 private SessionFactory sessionFactory;

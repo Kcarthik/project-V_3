@@ -12,7 +12,7 @@ import javax.transaction.Transactional;
 import com.niit.MuscleMechanic.model.Cart;
 import com.niit.MuscleMechanic.model.CartItem;
 
-@Repository("cartItemDAO")
+@Repository
 @Transactional
 public class CartItemDAOImpl implements CartItemDAO{
 

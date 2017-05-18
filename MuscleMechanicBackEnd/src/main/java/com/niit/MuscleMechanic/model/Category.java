@@ -20,18 +20,18 @@ public class Category {
 	String categoryName;
 	
 	String categoryDetails;
-	@OneToMany(mappedBy="category")
-	@JsonIgnore
-	private List<Product> products;
-	
-	
-	public List<Product> getProducts() {
-		return products;
-	}
-
-	public void setProducts(List<Product> products) {
-		this.products = products;
-	}
+//	@OneToMany(mappedBy="category")
+//	@JsonIgnore
+//	private List<Product> products;
+//	
+//	
+//	public List<Product> getProducts() {
+//		return products;
+//	}
+//
+//	public void setProducts(List<Product> products) {
+//		this.products = products;
+//	}
 
 	public int getId() {
 		return id;
@@ -59,7 +59,7 @@ public class Category {
 
 	@Override
 	public String toString() {
-		return "Category [id=" + id + ", categoryName=" + categoryName + ", categoryDetails=" + categoryDetails + ", product="+products+"]";
+		return "Category [id=" + id + ", categoryName=" + categoryName + ", categoryDetails=" + categoryDetails + "]";
 	}
 	
 
