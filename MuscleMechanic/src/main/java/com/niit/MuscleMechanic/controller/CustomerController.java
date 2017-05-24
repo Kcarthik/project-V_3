@@ -26,7 +26,7 @@ public class CustomerController {
     }
 	
     
-    @RequestMapping("/all/customer/showCustomer")
+    @RequestMapping("/signup")
     public String showCategory(Model model)
 	{
 		model.addAttribute("customer",new Customer());

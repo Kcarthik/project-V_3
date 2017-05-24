@@ -24,15 +24,15 @@ public class HomeController {
  		}
 
 
-@RequestMapping("/login")
-public String login(@RequestParam (value="error",required=false)String error,@RequestParam(value="logout",required=false)String logout,Model model){	
-	if(error!=null)
-	model.addAttribute("error","Invalid username and password... Please enter the correctly");
-	if(logout!=null)
-		model.addAttribute("logout", "logout successfully");
-	
-	return "login";
-}
+//@RequestMapping("/login")
+//public String login(@RequestParam (value="error",required=false)String error,@RequestParam(value="logout",required=false)String logout,Model model){	
+//	if(error!=null)
+//	model.addAttribute("error","Invalid username and password... Please enter the correctly");
+//	if(logout!=null)
+//		model.addAttribute("logout", "logout successfully");
+//	
+//	return "login";
+//}
 
 
 }
